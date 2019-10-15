@@ -23,7 +23,7 @@ def dns_amplification():
 			dns = DNS(rd = 1,
 					  qd = DNSQR(
 					  		qname = g_domain,
-					  		qtype = "A"		# Play around to see which one returns max answer length
+					  		qtype = "ANY"		# Play around to see which one returns max answer length
 							)
 					)
 
