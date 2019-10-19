@@ -63,7 +63,7 @@ def main():
 		g_domain = args.d
 
 	print("[*] Target IP: ", g_target_ip)
-	print("[*] DNS Server: ", g_name_servers)
+	print("[*] DNS Servers: ", g_name_servers)
 	print("[*] Domain: ", g_domain)
 
 	dns_amplification()
