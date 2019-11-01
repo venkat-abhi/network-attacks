@@ -2,7 +2,7 @@ from attacker import Attacker
 
 import socket
 
-class Syn_flooder(Attacker):
+class SynFlooder(Attacker):
 	"""
 	A class used to represent a Syn flooder
 
@@ -64,7 +64,7 @@ class Syn_flooder(Attacker):
 
 
 def main():
-	a = Syn_flooder("192.168.1.2", target_ports=[80, 443])
+	a = SynFlooder("192.168.1.2", target_ports=[80, 443])
 	a.print_target_ip()
 	a.print_target_ports()
 	a.start()
