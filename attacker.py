@@ -24,15 +24,19 @@ class Attacker:
 			self.attack = 'INVALID'
 
 	def print_target_ip(self):
-		print("[*] Target IP: {}".format(self.target_ipv4))
+		print("[*] Target IP: " + self.target_ipv4)
 
 	def setup_config(self):
 		pass
 
+def main():
+	a = Attacker("192.168.1.2", attack="SYN_FLOOD")
+	print(a.__dict__)
+	a.print_target_ip()
 
-#a = Attacker("192.168.1.2", "SYN_FLOOD")
-#b = Attacker("www.absolute.com")
-#c = Attacker("https://www.absolute.com")
-#print(a.__dict__)
-#print(b.__dict__)
+	b = Attacker("www.absolute.com")
+	print(b.__dict__)
+	b.print_target_ip()
 
+if __name__ == "__main__":
+	main()
