@@ -25,7 +25,7 @@ class SynFlooder(Attacker):
 	target_ports = [21, 22, 80, 443]
 	spoof_ip = None
 
-	def __init__(self, target, spoof_ip=None, target_ports=None):
+	def __init__(self, target:str, spoof_ip:str=None, target_ports:list=None):
 		"""
 		Parameters
         ----------

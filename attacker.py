@@ -12,7 +12,7 @@ ATTACK_TYPE = [
 ]
 
 class Attacker:
-	def __init__(self, target, spoof_ip=None, attack=None):
+	def __init__(self, target:str, spoof_ip:str=None, attack=None):
 		self.target_ipv4 = socket.gethostbyname(target)
 
 		if spoof_ip is not None:

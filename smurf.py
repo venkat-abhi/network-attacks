@@ -22,7 +22,7 @@ class Smurf(Attacker):
 		Sends spoofed ICMP packets to the target broadcast address
 	"""
 
-	def __init__(self, target, subnet_mask):
+	def __init__(self, target:str, subnet_mask:str):
 		"""
 		Parameters
         ----------
@@ -34,7 +34,7 @@ class Smurf(Attacker):
 		super().__init__(target, attack="SMURF")
 		self.broadcast_ipv4 = self.compute_broadcast_addr(subnet_mask)
 
-	def compute_broadcast_addr(self, subnet_mask) -> str:
+	def compute_broadcast_addr(self, subnet_mask:str) -> str:
 		"""Returns the broadcast address of the target subnet"""
 		addr = (IPNetwork(self.target_ipv4+"/"+subnet_mask)).broadcast
 		return str(addr)
