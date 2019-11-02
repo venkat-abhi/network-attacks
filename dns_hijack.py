@@ -69,8 +69,6 @@ class DnsHijacker(ArpPoisner):
 			send(dns_resp, verbose=0)
 			print(f"Resolved DNS request for {pkt[DNS].qd.qname} by {self.webserver_ipv4}")
 
-
-
 	def start(self):
 		DnsHijacker.setup_config()
 
