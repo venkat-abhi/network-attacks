@@ -81,6 +81,10 @@ class ArpPoisner(Attacker):
 		Poisons the router's and target ARP cache by continuously sending gratitious ARP
 		messages
 		"""
+
+		# Enable IPv4 forwarding
+		ArpPoisner.setup_config()
+
 		print("[*] Poisoning router's and target's ARP cache")
 		# Poison gateway's cache
 		while True:
